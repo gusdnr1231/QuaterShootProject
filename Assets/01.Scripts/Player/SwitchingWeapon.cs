@@ -6,11 +6,14 @@ using UnityEngine;
 public class SwitchingWeapon : MonoBehaviour
 {
     public int selectWeapon = 0;
-    public GunType WeaponType;
+    [Header("Gun")]
+    public GunType gunType;
+    public WeaponSO currentGun;
+    public List<WeaponSO> weapons;
 
     private void Awake()
     {
-        WeaponType = GunType.HandGun;
+        gunType = GunType.HandGun;
     }
 
     private void Start()
@@ -50,9 +53,10 @@ public class SwitchingWeapon : MonoBehaviour
         }
         switch (selectWeapon)
         {
-            case 0: WeaponType = GunType.HandGun; break;
-            case 1: WeaponType = GunType.HandGun; break;
-            case 2: WeaponType = GunType.HandGun; break;
+            case 0: gunType = GunType.HandGun; break;
+            case 1: gunType = GunType.HandGun; break;
+            case 2: gunType = GunType.HandGun; break;
         }
+        currentGun = weapons[selectWeapon];
     }
 }
