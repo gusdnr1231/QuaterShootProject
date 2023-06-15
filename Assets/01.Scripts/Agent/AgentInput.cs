@@ -8,7 +8,6 @@ public class AgentInput : MonoBehaviour
     [SerializeField] private LayerMask GroundLayer;
 
     public event Action<Vector3> OnMovementKeyPress = null;
-    public event Action OnAttackKeyPress = null;
     public event Action OnRollingKeyPress = null;
 
     private Vector3 directionInput;
@@ -21,18 +20,12 @@ public class AgentInput : MonoBehaviour
     private void UpdateInputs()
     {
         UpdateMoveInput();
-        UpdateAttackInput();
         UpdateRollingInput();
     }
 	#region Update Inputs
 	private void UpdateRollingInput()
     {
         if(Input.GetButtonDown("Jump")) OnRollingKeyPress?.Invoke();
-    }
-
-    private void UpdateAttackInput()
-    {
-        if(Input.GetMouseButtonDown(0)) OnAttackKeyPress?.Invoke();
     }
 
     private void UpdateMoveInput()

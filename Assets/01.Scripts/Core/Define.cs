@@ -5,9 +5,8 @@ namespace Core
 	public enum StateType
 	{
 		Normal = 0,
-		Attack = 1,
-		OnHit = 2,
-		Rolling = 3,
+		OnHit = 1,
+		Rolling = 2,
 	}
 
 	public enum GunType

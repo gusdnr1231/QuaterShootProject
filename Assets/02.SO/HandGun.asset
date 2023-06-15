@@ -13,8 +13,5 @@ MonoBehaviour:
   m_Name: HandGun
   m_EditorClassIdentifier: 
   GunType: 0
-  damage: 10
-  criticalDamage: 1.75
   maxAmmo: 30
-  shootDelay: 0.3
-  reloadDelay: 1.2
+  shootDelay: 0.5

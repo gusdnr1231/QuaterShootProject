@@ -8,8 +8,8 @@ public class SwitchingWeapon : MonoBehaviour
     public int selectWeapon = 0;
     [Header("Gun")]
     public GunType gunType;
-    public WeaponSO currentGun;
-    public List<WeaponSO> weapons;
+    public Weapon curWeapon;
+    public List<Weapon> weapons;
 
     private void Awake()
     {
@@ -57,6 +57,6 @@ public class SwitchingWeapon : MonoBehaviour
             case 1: gunType = GunType.HandGun; break;
             case 2: gunType = GunType.HandGun; break;
         }
-        currentGun = weapons[selectWeapon];
+        curWeapon = weapons[selectWeapon];
     }
 }
