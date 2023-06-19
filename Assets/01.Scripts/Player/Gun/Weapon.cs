@@ -65,7 +65,7 @@ public class Weapon : MonoBehaviour
 		GameObject intantBullet = Instantiate(bulletType, shootPosition.position, baseTransform.rotation);
 		Rigidbody bulletRigid = intantBullet.GetComponent<Rigidbody>();
 		Bullet bullet = intantBullet.GetComponent<Bullet>();
-		bulletRigid.velocity = Vector3.forward * bullet.speed;
+		bulletRigid.velocity = transform.rotation * Vector3.forward * bullet.speed;
 		yield return new WaitForSeconds(weaponType.shootDelay);
 		//muzzleFlash.SetActive(false);
 		isShoot = false;
