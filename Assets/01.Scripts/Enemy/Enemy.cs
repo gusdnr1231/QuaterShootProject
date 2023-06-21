@@ -8,10 +8,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float speed;
 
     private Transform target;
-	GameManager gameManager;
     private void Awake()
     {
-	    gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
 	}
 
@@ -28,7 +26,6 @@ public class Enemy : MonoBehaviour
         enemyHP -= damage;
         if(enemyHP <= 0)
         {
-            gameManager.PlusKillCount();
             Destroy(gameObject);
         }
     }
